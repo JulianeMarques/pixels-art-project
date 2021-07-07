@@ -17,4 +17,21 @@ function creatingPixelBoardRows(linhas) {
       creatingPixelBoardCollumns(divRow, linhas);
     }
   }
+
+
+  creatingPixelBoardRows(5);
+
+  const paletteColors = document.querySelectorAll('.color');
   
+  function addingEventListenersToPalette(elements) {
+    for (let index = 0; index < elements.length; index += 1) {
+      elements[index].addEventListener('click', (event) => {
+        for (index = 0; index < elements.length; index += 1) {
+          elements[index].classList.remove('selected');
+        }
+        event.target.classList.toggle('selected');
+      });
+    }
+  }
+  
+  addingEventListenersToPalette(paletteColors);
